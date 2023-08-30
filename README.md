@@ -22,7 +22,7 @@ The Following Setup is tested and it is working:
  * torchvision>=0.8.2+cu110
 
 ## Citation
-Please cite our paper if you find the work useful [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10136703).
+Please cite our [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10136703) if you find the work useful.
 ```
 @ARTICLE{
   author={Sun, Hongze and Cai, Wuque and Yang, Baoxin and Cui, Yan and Xia, Yang and Yao, Dezhong and Guo, Daqing},
