@@ -21,6 +21,12 @@ The following setup is tested and it is working:
    
  * torchvision>=0.8.2+cu110
 
+## Train on MNIST Dadaset
+```
+run train.py
+```
+You can change the hyper-parameters and network architectures to what you need in files ```param.py``` and ```func.py```.
+
 ## Citation
 Please cite our [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10136703) if you find the work useful.
 ```
