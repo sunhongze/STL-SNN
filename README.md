@@ -12,8 +12,8 @@ backpropagation path, the error signal is propagated in both the spatial and tem
 approaches, including synergistic learning between synaptic weights and spike thresholds and two degenerate single-learning versions based on synaptic
 learning and threshold learning.
 
-## Prerequisites
-The Following Setup is tested and it is working:
+## Requirements
+The following setup is tested and it is working:
 
  * numpy>=1.23.1
    
@@ -31,7 +31,7 @@ Please cite our [paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber
   year={2023},
   volume={},
   number={},
-  pages={1-1},
+  pages={1-15},
   doi={10.1109/TCDS.2023.3278712}}
 ```
 
