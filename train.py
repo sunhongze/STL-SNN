@@ -31,7 +31,7 @@ def get_model_and_dataset(args):
 
         ## load loss function and optimizers
         criterion = F.mse_loss
-        optimizer = torch.optim.Adam(model.parameters(), lr=mnist_para.lr, weight_decay=0, betas=(0.9, 0.999), eps=1e-8)
+        optimizer = torch.optim.Adam(model.parameters(), lr=mnist_para.lr, weight_decay=1e-6, betas=(0.9, 0.999), eps=1e-8)
         scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=mnist_para.gama)
 
         ## get epoch
