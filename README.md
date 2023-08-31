@@ -21,7 +21,8 @@ The following setup is tested and it is working:
    
  * torchvision>=0.8.2+cu110
 
-## Train on MNIST Dadaset
+## Training
+We give a demo on STL-SNNs trained with MNIST dataset.
 ```
 run train.py
 ```
