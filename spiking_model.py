@@ -30,7 +30,7 @@ class MNIST(nn.Module):
 
     def forward(self, input):
         inputs = input.unsqueeze(1).repeat(1,mnist_para.time_step,1,1,1)
-        x = inputs.cpu() >= torch.randn(inputs.size())
+        x = inputs.cpu() >= torch.rand(inputs.size())
 
         x = self.conv1(x.float().cuda())
         x = self.lif1(x)
