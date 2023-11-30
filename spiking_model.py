@@ -8,12 +8,12 @@ from params import mnist_para
 class MNIST(nn.Module):
     def __init__(self, train=mnist_para.train_thresh, thresh=mnist_para.init_thresh, heterogeneity=mnist_para.hete_thresh, tau=mnist_para.tau, P=10, time_step=mnist_para.time_step):
         super(MNIST, self).__init__()
-        self.conv1 = Conv2d(in_channels=1, out_channels=128, kernel_size=3, stride=1, padding=1, bias=False)
+        self.conv1 = Conv2d(in_channels=1, out_channels=128, kernel_size=5, stride=1, padding=2, bias=False)
         self.bn1   = BatchNorm2d(num_features=128)
         self.lif1  = LIF(train=train, thresh=torch.ones([128,28,28])*thresh, tau=tau, heterogeneity=heterogeneity)
         self.pool1 = AdaptiveMaxPool2d(14)
 
-        self.conv2 = Conv2d(in_channels=128, out_channels=128, kernel_size=3, stride=1, padding=1, bias=False)
+        self.conv2 = Conv2d(in_channels=128, out_channels=128, kernel_size=5, stride=1, padding=2, bias=False)
         self.bn2   = BatchNorm2d(num_features=128)
         self.lif2  = LIF(train=train, thresh=torch.ones([128,14,14])*thresh, tau=tau, heterogeneity=heterogeneity)
         self.pool2 = AdaptiveMaxPool2d(7)
@@ -33,10 +33,12 @@ class MNIST(nn.Module):
         x = inputs.cpu() >= torch.rand(inputs.size())
 
         x = self.conv1(x.float().cuda())
+        x = self.bn1(x)
         x = self.lif1(x)
         x = self.pool1(x)
 
         x = self.conv2(x)
+        x = self.bn2(x)
         x = self.lif2(x)
         x = self.pool2(x)
 
